@@ -53,5 +53,5 @@ sudo chown -R ubuntu:ubuntu /data/
 #Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static.
 echo "$ServerBlock" | sudo tee "$Config" > /dev/null
 
-#Restart nginx server
+#Restart nginx  server
 sudo service nginx restart

@@ -6,7 +6,6 @@ from os.path import isdir
 from datetime import datetime
 from fabric.api import local
 
-
 def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
     file_name = "versions/web_static_{}.tgz".format(
