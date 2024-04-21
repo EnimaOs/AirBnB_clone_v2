@@ -8,13 +8,11 @@ from models.state import State
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
-
 # Register a function to be called when the application context is torn down
 @app.teardown_appcontext
 def teardown_session(exception=None):
     """close the session"""
     storage.close()
-
 
 @app.route('/states_list')
 def list_states():
@@ -22,7 +20,6 @@ def list_states():
     res = storage.all(State).values()
     # storage.all(State) is dictionary of states object
     return render_template('7-states_list.html', states=res)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
